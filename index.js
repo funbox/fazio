@@ -127,6 +127,13 @@ function findPackages(packages, packagesNames, dir) {
   packagesNames.forEach(pn => {
     if (dir.name === pn) {
       const version = getPackageVersion(dir.path);
+
+      if (version === null) {
+        // null as version means that some error is happend & handled
+        // so just return
+        return;
+      }
+
       if (semver.satisfies(version, packages[pn])) {
         log.success(`→ ${dir.path}@${version}`);
         packagesFound += 1;
@@ -162,6 +169,11 @@ function getPackageVersion(dirPath) {
     const { version } = require(path.join(dirPath, 'package.json'));
     return version;
   } catch (err) {
+    if (err.code === 'MODULE_NOT_FOUND') {
+      // well, it is not a module
+      return null;
+    }
+
     log.verboseError('Unexpected error occurred during reading package.json:');
     log.verboseError(err);
 
