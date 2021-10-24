@@ -198,7 +198,7 @@ function tryReadDirPath(dirPath, { logKnownErrors = false } = {}) {
       return null;
     }
 
-    if (err.code === 'EACCES') {
+    if (err.code === 'EACCES' || err.code === 'EPERM') {
       logKnownError(`Does not have rights to read \`${dirPath}\`.`);
       accessErrorsOccurred = true;
       return null;
