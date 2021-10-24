@@ -12,9 +12,9 @@ Examples:
   $ fazio -p 'browser-sync' 'chokidar@2' -d ~/projects --no-global-check`);
 
 program
-  .requiredOption('-p, --package <packages...>', `a package (or packages) to look for (required)
+  .option('-p, --package <packages...>', `a package (or packages) to look for (required)
 available formats: \`package-name\`, \`package-name@semver-expression\``)
-  .option('-d, --directory <dirs...>', 'a directory (or directories) to look in (required when --no-global-check is not passed)')
+  .option('-d, --directory <dirs...>', 'a directory (or directories) to look in (required when --no-global-check is passed)')
   .option('--no-global-check', 'skip check for globally installed packages')
   .option('--verbose', 'log more than usual')
   .option('--no-color', 'disable colors')

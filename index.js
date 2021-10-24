@@ -17,6 +17,7 @@ module.exports = (options = {}) => {
   packagesFound = 0;
   packagesOmitted = 0;
 
+  options.directory = options.directory || [];
   const rawDirs = [...options.directory];
 
   if (options.globalCheck) {
@@ -26,6 +27,7 @@ module.exports = (options = {}) => {
   const dirs = parseDirs(rawDirs);
   assertDirs(dirs);
 
+  options.package = options.package || [];
   const packages = parsePackages(options.package);
   assertPackages(packages);
 
@@ -68,6 +70,11 @@ function assertDirs(dirs) {
   // reading dirs to check the access & existence
   let isFailed = false;
 
+  if (dirs.length === 0) {
+    isFailed = true;
+    log.error('No directories to search through were passed.');
+  }
+
   dirs.forEach(dir => {
     try {
       const result = tryReadDirPath(dir.path);
@@ -98,6 +105,11 @@ function parsePackages(rawPackages) {
 
 function assertPackages(packages) {
   let isFailed = false;
+
+  if (Object.keys(packages).length === 0) {
+    isFailed = true;
+    log.error('No packages to search for were passed.');
+  }
 
   Object.entries(packages).forEach(([k, v]) => {
     if (!semver.validRange(v)) {
