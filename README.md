@@ -33,7 +33,7 @@ By default Fazio also checks the globally installed deps. If you want to skip it
 You can use the package via npx without installing the Fazio globally:
 
 ```
-$ npx @funboxteam/fazio -p 'ua-parser-js@0.7.29 || 0.8.0 || 1.0.0' -d ~ --verbose
+$ npx @funboxteam/fazio --package 'ua-parser-js@0.7.29 || 0.8.0 || 1.0.0' --directory ~ --verbose
 npx: installed 5 in 0.908s
 Directories to scan:
   /home/ai
