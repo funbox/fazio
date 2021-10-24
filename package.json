@@ -1,15 +1,23 @@
 {
   "name": "fazio",
   "version": "0.1.0",
-  "description": "",
+  "description": "A tool to find an npm dep somewhere on your filesystem",
   "main": "index.js",
+  "bin": {
+    "fazio": "./cli.js"
+  },
   "scripts": {
     "lint": "eslint -c .eslintrc.js --ext js .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "dependency",
+    "finder",
+    "snyk",
+    "filesystem"
+  ],
+  "author": "Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)",
+  "license": "MIT",
   "dependencies": {
     "commander": "8.3.0",
     "semver": "7.3.5"
