@@ -7,7 +7,7 @@ A tool for sneaking around your filesystem to find the installed npm deps you as
 ## Rationale
 
 [It happens](https://therecord.media/malware-found-in-npm-package-with-millions-of-weekly-downloads/) 
-that some very popular npm package are got compromised and you have to be sure that you don't have one installed
+that popular npm packages are got compromised and you have to be sure that you don't have one installed
 on your machine. Fazio does the job.
 
 ## Installation
