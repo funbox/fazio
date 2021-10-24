@@ -77,7 +77,7 @@ function assertDirs(dirs) {
 
   dirs.forEach(dir => {
     try {
-      const result = tryReadDirPath(dir.path);
+      const result = tryReadDirPath(dir.path, { logKnownErrors: true });
       isFailed = isFailed || !result;
     } catch (err) {
       isFailed = true;
@@ -184,18 +184,22 @@ function getGlobalPackagesDir() {
   }
 }
 
-function tryReadDirPath(dirPath) {
+function tryReadDirPath(dirPath, { logKnownErrors = false }) {
+  const logKnownError = logKnownErrors
+    ? log.verboseError.bind(log)
+    : log.error.bind(log);
+
   try {
     return fs.readdirSync(dirPath, { withFileTypes: true });
   } catch (err) {
     if (err.code === 'ENOENT') {
-      log.verboseError(`\`${dirPath}\` directory does not exist.`);
+      logKnownError(`\`${dirPath}\` directory does not exist.`);
       accessErrorsOccurred = true;
       return null;
     }
 
     if (err.code === 'EACCES') {
-      log.verboseError(`Does not have rights to read \`${dirPath}\`.`);
+      logKnownError(`Does not have rights to read \`${dirPath}\`.`);
       accessErrorsOccurred = true;
       return null;
     }
