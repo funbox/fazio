@@ -16,6 +16,14 @@
     "snyk",
     "filesystem"
   ],
+  "files": [
+    "cli.js",
+    "index.js",
+    "logger.js",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ],
   "author": "Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)",
   "license": "MIT",
   "dependencies": {
