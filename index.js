@@ -184,10 +184,10 @@ function getGlobalPackagesDir() {
   }
 }
 
-function tryReadDirPath(dirPath, { logKnownErrors = false }) {
+function tryReadDirPath(dirPath, { logKnownErrors = false } = {}) {
   const logKnownError = logKnownErrors
-    ? log.verboseError.bind(log)
-    : log.error.bind(log);
+    ? log.error.bind(log)
+    : log.verboseError.bind(log);
 
   try {
     return fs.readdirSync(dirPath, { withFileTypes: true });
