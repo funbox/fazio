@@ -1,5 +1,5 @@
 # Changelog
 
-## X.Y.Z (DD.MM.YYYY)
+## 0.1.0 (24.10.2021)
 
-* Changes.
+Initial version.
