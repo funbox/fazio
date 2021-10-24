@@ -1,6 +1,6 @@
 {
   "name": "@funboxteam/fazio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tool to find an npm dep somewhere on your filesystem",
   "main": "index.js",
   "bin": {
