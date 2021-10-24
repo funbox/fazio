@@ -22,7 +22,11 @@ $ npm install -g fazio
 $ fazio -p 'ua-parser-js@0.7.29 || 0.8.0 || 1.0.0' -d ~
 ```
 
-You may pass as many packages to search for, and as many directories to look through as you want using `-p` & `-d` flags.
+You may pass as many packages to search for, and as many directories to look through as you want using `-p` & `-d` flags:
+
+```
+$ fazio -p 'chokidar@2' -p 'fsevents@<2' -d ~/projects -d ~/work
+```
 
 By default Fazio also checks the globally installed deps. If you want to skip it, pass `--no-global-check` flag.
 
