@@ -13,7 +13,7 @@ on your machine. Fazio does the job.
 ## Installation
 
 ```
-$ npm install -g fazio
+$ npm install -g @funboxteam/fazio
 ```
 
 ## Usage
