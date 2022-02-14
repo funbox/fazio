@@ -1,6 +1,6 @@
 {
   "name": "@funboxteam/fazio",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "A tool to find an npm dep somewhere on your filesystem",
   "main": "index.js",
   "bin": {
@@ -36,8 +36,8 @@
     "semver": "7.3.5"
   },
   "devDependencies": {
-    "@funboxteam/eslint-config": "5.3.2",
-    "eslint": "5.16.0",
+    "@funboxteam/eslint-config": "7.1.0",
+    "eslint": "7.32.0",
     "husky": "4.3.8",
     "lint-staged": "11.2.4"
   },
