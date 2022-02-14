@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (14.02.2022)
+
+Nothing changed since 0.1.3.
+
+Just a formal major release because the tool works as expected and no bugs were found.
+
+
 ## 0.1.3 (25.10.2021)
 
 Fixed access check on macOS.
