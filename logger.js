@@ -1,4 +1,4 @@
-const tty = require('tty');
+const tty = require('node:tty');
 
 const isDisabled = 'NO_COLOR' in process.env;
 const isForced = 'FORCE_COLOR' in process.env;

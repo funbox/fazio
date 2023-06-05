@@ -36,7 +36,7 @@
     "semver": "7.3.5"
   },
   "devDependencies": {
-    "@funboxteam/eslint-config": "7.1.0",
+    "@funboxteam/eslint-config": "7.3.0",
     "eslint": "7.32.0",
     "husky": "4.3.8",
     "lint-staged": "11.2.4"
